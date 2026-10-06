@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clínica Joinville Guaratuba</title>
+<meta name="description" content="Odontologia estética e saúde integrada no centro de Guaratuba. Aberta até as 20h de segunda a sexta e aos sábados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: deep wine hero carrying the drawn dental arch, warm porcelain sections below, crimson closing band; colors taken from the clinic's Instagram identity */
+:root {
+  --bg: #FBF7F4;
+  --surface: #FFFFFF;
+  --ink: #2A0D10;
+  --muted: #74595B;
+  --line: #EADBD5;
+  --accent: #B3131B;
+  --accent-ink: #FFFFFF;
+  --wine: #6B0E14;
+  --on-wine: #FBEFE6;
+  --sand: #B8894A;
+  --wash: #F6EBE6;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --maxw: 1180px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #140809; --surface: #22100F; --ink: #F5E9E4; --muted: #B89D9B; --line: #3A1E20;
+    --accent: #E4474D; --accent-ink: #140809; --wine: #4A0A0E; --on-wine: #FBEFE6; --sand: #D9AE6E; --wash: #1E0E10; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #140809; --surface: #22100F; --ink: #F5E9E4; --muted: #B89D9B; --line: #3A1E20;
+  --accent: #E4474D; --accent-ink: #140809; --wine: #4A0A0E; --on-wine: #FBEFE6; --sand: #D9AE6E; --wash: #1E0E10; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; letter-spacing: -.01em; }
+h2 { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.08; }
+h2 em, h1 em { font-style: italic; color: var(--accent); }
+p { margin: 0; }
+
+/* Header */
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 14px; }
+.brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1.1; }
+.brand { flex-direction: row; align-items: center; gap: 12px; }
+.brand .mark { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-family: var(--display); font-style: italic; font-size: 22px; flex: none; }
+.brand .wm { display: flex; flex-direction: column; line-height: 1; }
+.brand .wm i { font-style: normal; font-size: 10.5px; letter-spacing: .32em; text-transform: uppercase; color: var(--muted); }
+.brand b { font-family: var(--body); font-weight: 600; font-size: 17px; letter-spacing: .14em; text-transform: uppercase; margin-top: 4px; }
+
+nav.links { display: flex; gap: 28px; font-size: 15px; }
+nav.links a { text-decoration: none; color: var(--muted); }
+nav.links a:hover { color: var(--ink); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font: 600 15px/1 var(--body); text-decoration: none; cursor: pointer;
+  padding: 15px 22px; border-radius: 999px; border: 1px solid transparent;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.btn-solid { background: var(--accent); color: var(--accent-ink); }
+.btn-solid:hover { transform: translateY(-1px); }
+.btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-sm { padding: 11px 18px; font-size: 14px; }
+@media (max-width: 860px) { nav.links { display: none; } }
+
+/* Hero */
+.hero { background: var(--wine); color: var(--on-wine); }
+.hero .eyebrow { color: color-mix(in srgb, var(--on-wine) 70%, transparent); }
+.hero h1 em { color: var(--sand); }
+.hero .lede { color: color-mix(in srgb, var(--on-wine) 78%, transparent) !important; }
+.hero .btn-solid { background: var(--on-wine); color: var(--wine); }
+.hero .btn-ghost { color: var(--on-wine); border-color: color-mix(in srgb, var(--on-wine) 35%, transparent); }
+.hero .btn-ghost:hover { border-color: var(--on-wine); }
+.hero .rating, .hero .arch-caption { color: color-mix(in srgb, var(--on-wine) 70%, transparent); }
+.hero .rating strong { color: var(--on-wine); }
+.hero #toothTip { color: var(--sand); }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(24px, 5vw, 72px); align-items: center; padding-block: clamp(48px, 8vw, 104px) clamp(40px, 6vw, 80px); }
+.hero h1 { font-size: clamp(46px, 7vw, 92px); line-height: .98; margin-top: 22px; }
+.hero .lede { font-size: clamp(17px, 1.6vw, 20px); color: var(--muted); max-width: 46ch; margin-top: 26px; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.rating { display: inline-flex; align-items: center; gap: 12px; margin-top: 34px; font-size: 14.5px; color: var(--muted); text-decoration: none; }
+.rating .stars { color: var(--sand); letter-spacing: 2px; font-size: 15px; }
+.rating strong { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.rating:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.arch-box { position: relative; min-width: 0; }
+.arch-box svg { width: 100%; height: auto; display: block; overflow: visible; }
+.arch-caption { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: .06em; }
+#toothTip { min-height: 1.4em; color: var(--accent); }
+.tooth { fill: color-mix(in srgb, var(--on-wine) 8%, transparent); stroke: var(--on-wine); stroke-width: 1.1; transition: fill .25s ease, transform .25s ease; cursor: default; transform-box: fill-box; transform-origin: center; }
+.tooth:hover, .tooth.on { fill: var(--sand); stroke: var(--sand); }
+.tnum { font-family: var(--mono); font-size: 10px; fill: color-mix(in srgb, var(--on-wine) 60%, transparent); text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
+.midline { stroke: color-mix(in srgb, var(--on-wine) 25%, transparent); stroke-dasharray: 3 5; }
+.gum { fill: none; stroke: color-mix(in srgb, var(--on-wine) 18%, transparent); stroke-width: 1; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } .arch-box { max-width: 520px; } }
+
+
+/* Hero slideshow: 3 photos crossfade every 10s with slow zoom, wine gradient keeps text legible */
+.hero { position: relative; overflow: hidden; isolation: isolate; }
+.hero .wrap { grid-template-columns: minmax(0, 640px); min-height: clamp(560px, 78vh, 760px); align-content: center; position: relative; }
+.slides { position: absolute; inset: 0; z-index: -1; background: var(--wine); }
+.slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.02); transition: opacity 1.8s ease; }
+.slides img.on { opacity: 1; animation: kb 11s ease-out forwards; }
+@keyframes kb { from { transform: scale(1.02); } to { transform: scale(1.12) translate(-1.5%, -1%); } }
+.slides::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--wine) 94%, transparent) 0%, color-mix(in srgb, var(--wine) 80%, transparent) 38%, color-mix(in srgb, var(--wine) 25%, transparent) 75%, color-mix(in srgb, var(--wine) 10%, transparent) 100%),
+    linear-gradient(0deg, color-mix(in srgb, var(--wine) 70%, transparent) 0%, transparent 35%);
+}
+.hero-dots { position: absolute; right: clamp(16px, 4vw, 40px); bottom: clamp(20px, 4vw, 40px); display: flex; gap: 18px; }
+.hd { background: none; border: 0; padding: 0; cursor: pointer; display: flex; flex-direction: column; gap: 8px; width: 110px; text-align: left; color: color-mix(in srgb, var(--on-wine) 60%, transparent); font: 500 11.5px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.hd.on { color: var(--on-wine); }
+.hd i { display: block; height: 2px; background: color-mix(in srgb, var(--on-wine) 25%, transparent); overflow: hidden; }
+.hd b { display: block; height: 100%; width: 0; background: var(--sand); }
+.hd.on b { animation: fill 10s linear forwards; }
+.hero.paused .hd.on b { animation-play-state: paused; }
+@media (max-width: 860px) {
+  .hero .wrap { min-height: 0; padding-bottom: 96px; }
+  .slides::after { background: linear-gradient(0deg, color-mix(in srgb, var(--wine) 96%, transparent) 0%, color-mix(in srgb, var(--wine) 82%, transparent) 55%, color-mix(in srgb, var(--wine) 45%, transparent) 100%); }
+  .hero-dots { left: clamp(16px, 4vw, 40px); right: auto; gap: 14px; }
+  .hd { width: 92px; }
+}
+@media (prefers-reduced-motion: reduce) { .slides img.on { animation: none; } .hd.on b { animation: none; width: 100%; } }
+
+/* Facts strip */
+.facts { border-block: 1px solid var(--line); }
+.facts .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.fact { padding: 26px 22px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.fact:first-child { border-left: 0; padding-left: 0; }
+.fact b { font-family: var(--display); font-weight: 400; font-size: 28px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.fact span { font-size: 14px; color: var(--muted); }
+@media (max-width: 860px) {
+  .facts .wrap { grid-template-columns: 1fr 1fr; }
+  .fact { padding: 20px 16px; }
+  .fact:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+
+/* Sections */
+section.block { padding-block: clamp(72px, 10vw, 128px); }
+.head { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: end; margin-bottom: clamp(36px, 5vw, 64px); }
+.head p { color: var(--muted); max-width: 48ch; justify-self: end; }
+@media (max-width: 860px) { .head { grid-template-columns: 1fr; } .head p { justify-self: start; } }
+
+/* Treatments: smile photo with rotating treatment names, list beside it */
+.tx { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(28px, 4vw, 64px); align-items: start; }
+.smile {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 96px); margin: 0;
+  aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; border-radius: 6px;
+  background:
+    radial-gradient(120% 80% at 70% 20%, color-mix(in srgb, var(--accent) 70%, transparent), transparent 60%),
+    linear-gradient(160deg, var(--accent), var(--wine) 70%);
+  color: var(--on-wine);
+}
+.smile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); animation: drift 18s ease-in-out infinite alternate; }
+@keyframes drift { to { transform: scale(1.12) translate(-1.5%, -1%); } }
+.smile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 38%, color-mix(in srgb, var(--wine) 92%, transparent) 100%); pointer-events: none; }
+.smile-over { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: clamp(20px, 3vw, 32px); display: flex; flex-direction: column; gap: 14px; }
+.smile-over .eyebrow { color: color-mix(in srgb, var(--on-wine) 72%, transparent); }
+.rot { position: relative; height: 2.3em; overflow: hidden; font-family: var(--display); font-style: italic; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; }
+.rot span { position: absolute; left: 0; right: 0; bottom: 0; transition: transform .6s cubic-bezier(.2,.7,.2,1), opacity .6s ease; text-wrap: balance; }
+.rot span.out { transform: translateY(-60%); opacity: 0; }
+.rot span.in { transform: translateY(60%); opacity: 0; }
+.rot-foot { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 12px; color: color-mix(in srgb, var(--on-wine) 72%, transparent); font-variant-numeric: tabular-nums; }
+.rot-bar { flex: 1; height: 2px; background: color-mix(in srgb, var(--on-wine) 22%, transparent); overflow: hidden; }
+.rot-bar i { display: block; height: 100%; width: 0; background: var(--sand); }
+.rot-bar i.run { animation: fill var(--dur, 2800ms) linear forwards; }
+@keyframes fill { to { width: 100%; } }
+.rot-foot b { color: var(--on-wine); font-weight: 500; }
+.treat { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink); }
+.treat article { padding: 24px 22px 26px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; min-width: 0; cursor: pointer; position: relative; transition: background .3s ease; }
+.treat article:nth-child(even) { padding-left: 22px; padding-right: 0; border-left: 1px solid var(--line); }
+.treat article::before { content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .5s ease; }
+.treat article.on::before { transform: scaleX(1); }
+.treat .code { font-family: var(--mono); font-size: 11.5px; color: var(--sand); letter-spacing: .1em; text-transform: uppercase; }
+.treat h3 { font-size: 24px; line-height: 1.15; transition: color .3s ease; }
+.treat article.on h3 { color: var(--accent); }
+.treat p { font-size: 15px; color: var(--muted); }
+@media (max-width: 960px) {
+  .tx { grid-template-columns: 1fr; }
+  .smile { position: relative; top: 0; aspect-ratio: 4 / 3; }
+}
+@media (max-width: 560px) {
+  .smile { aspect-ratio: 4 / 5; }
+  .treat { grid-template-columns: 1fr; }
+  .treat article, .treat article:nth-child(even) { padding: 20px 0 22px; border-left: 0; }
+}
+
+/* First visit */
+.visit { background: var(--wash); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 3vw, 40px); counter-reset: s; list-style: none; margin: 0; padding: 0; }
+.steps li { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.steps li::before {
+  counter-increment: s; content: counter(s, decimal-leading-zero);
+  font-family: var(--display); font-style: italic; font-size: 54px; line-height: 1; color: var(--accent);
+  padding-bottom: 14px; border-bottom: 1px solid var(--line);
+}
+.steps h3 { font-family: var(--body); font-weight: 600; font-size: 18px; }
+.steps p { font-size: 15.5px; color: var(--muted); }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; row-gap: 36px; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* Why */
+.why { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+.why blockquote { margin: 0; font-family: var(--display); font-size: clamp(30px, 3.6vw, 44px); line-height: 1.18; }
+.why blockquote em { color: var(--accent); }
+.why ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.why li { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding-block: 22px; border-top: 1px solid var(--line); }
+.why li:last-child { border-bottom: 1px solid var(--line); }
+.why li b { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); padding-top: 4px; }
+.why li p { color: var(--muted); font-size: 16px; }
+@media (max-width: 860px) { .why { grid-template-columns: 1fr; } .why li { grid-template-columns: 1fr; gap: 6px; } }
+
+/* Reviews */
+.reviews { display: grid; grid-template-columns: auto 1fr auto; gap: clamp(24px, 5vw, 72px); align-items: center; padding-block: clamp(40px, 5vw, 64px); border-block: 1px solid var(--line); }
+.score { font-family: var(--display); font-size: clamp(88px, 12vw, 148px); line-height: .85; font-variant-numeric: tabular-nums; }
+.score small { font-size: .32em; color: var(--muted); font-style: italic; }
+.reviews .stars { color: var(--sand); font-size: 20px; letter-spacing: 4px; }
+.reviews p { color: var(--muted); max-width: 44ch; margin-top: 10px; }
+.reviews p strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 860px) { .reviews { grid-template-columns: 1fr; } }
+
+/* Visit us */
+.visitus { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
+.hours { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; margin-top: 28px; }
+.hours td { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+.hours td:last-child { text-align: right; font-family: var(--mono); font-size: 14.5px; }
+.hours tr.today td { color: var(--accent); font-weight: 600; }
+.hours tr.today td:first-child::after { content: "  hoje"; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; margin-left: 10px; }
+.hours tr.closed td:last-child { color: var(--muted); }
+.status { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 15px; color: var(--muted); }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); flex: none; }
+.dot.open { background: #2E9E6A; box-shadow: 0 0 0 4px color-mix(in srgb, #2E9E6A 22%, transparent); }
+.contact { display: flex; flex-direction: column; gap: 26px; }
+.contact .row { display: flex; flex-direction: column; gap: 6px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.contact .val { font-family: var(--display); font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; }
+.contact .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.copy { font: 500 13px var(--mono); background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+.copy:hover { color: var(--ink); border-color: var(--ink); }
+@media (max-width: 860px) { .visitus { grid-template-columns: 1fr; } }
+
+/* Final CTA */
+.final { background: var(--accent); color: var(--accent-ink); }
+.final .wrap { padding-block: clamp(64px, 9vw, 112px); display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 32px; }
+.final h2 { max-width: 15ch; }
+.final h2 em { color: inherit; opacity: .85; }
+.final .btn-solid { background: var(--accent-ink); color: var(--accent); }
+
+footer { padding-block: 36px 110px; font-size: 13.5px; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; }
+footer .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; }
+.ph { background: color-mix(in srgb, var(--sand) 22%, transparent); color: var(--ink); padding: 1px 6px; border-radius: 4px; }
+
+/* Mobile booking bar */
+.mbar { display: none; }
+@media (max-width: 720px) {
+  .mbar {
+    display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: color-mix(in srgb, var(--bg) 94%, transparent); border-top: 1px solid var(--line);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
+  .mbar .btn { flex: 1; }
+  .top .btn { display: none; }
+}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Clínica Joinville, início">
+      <span class="mark" aria-hidden="true">J</span>
+      <span class="wm"><i>Clínica</i><b>Joinville</b></span>
+    </a>
+    <nav class="links" aria-label="Seções">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#primeira-consulta">Primeira consulta</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#visite">Horários e endereço</a>
+    </nav>
+    <a class="btn btn-solid btn-sm" href="https://wa.me/554134422006?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="slides" aria-hidden="true">
+      <img class="on" src="https://images.unsplash.com/photo-1681939282781-341ac4f61996?w=2000&q=80&auto=format&fit=crop" alt="" onerror="this.remove()">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=2000&q=80&auto=format&fit=crop" alt="" loading="lazy" onerror="this.remove()">
+      <img src="https://images.unsplash.com/photo-1674775372064-8c75d3f8c757?w=2000&q=80&auto=format&fit=crop" alt="" loading="lazy" onerror="this.remove()">
+    </div>
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Odontologia estética e saúde integrada · Guaratuba</div>
+        <h1>Sorrisos que transformam a <em>autoestima.</em></h1>
+        <p class="lede">Implantes, facetas, clareamento e aparelho no centro de Guaratuba. Avaliação com plano explicado antes de começar e atendimento até as 20h, de segunda a sexta. Aos sábados também.</p>
+        <div class="ctas">
+          <a class="btn btn-solid" href="https://wa.me/554134422006?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+          <a class="btn btn-ghost" href="#tratamentos">Ver tratamentos</a>
+        </div>
+        <a class="rating" href="https://www.google.com/maps/search/?api=1&query=Clinica+Joinville+Guaratuba&query_place_id=ChIJ58XrEzHx25QRiP2lbjmlc78" target="_blank" rel="noopener">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span><strong>4,7 no Google</strong> · 249 avaliações</span>
+        </a>
+      </div>
+      <div class="hero-dots" role="tablist" aria-label="Fotos em destaque">
+        <button type="button" class="hd on" data-i="0" aria-label="Foto 1: avaliação"><span>Avaliação</span><i><b></b></i></button>
+        <button type="button" class="hd" data-i="1" aria-label="Foto 2: consultório"><span>Consultório</span><i><b></b></i></button>
+        <button type="button" class="hd" data-i="2" aria-label="Foto 3: sorriso"><span>Sorriso</span><i><b></b></i></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><b>9h – 20h</b><span>Segunda a sexta</span></div>
+      <div class="fact"><b>9h – 17h</b><span>Aos sábados</span></div>
+      <div class="fact"><b>Centro</b><span>Ao lado da rodoviária</span></div>
+      <div class="fact"><b>4,7 ★</b><span>249 avaliações no Google</span></div>
+    </div>
+  </div>
+
+  <section class="block" id="tratamentos">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Tratamentos</div>
+          <h2 style="margin-top:14px">Do clareamento ao <em>implante</em>, no mesmo lugar.</h2>
+        </div>
+        <p>Cada tratamento começa por uma avaliação. Você sai da primeira consulta sabendo o que precisa ser feito, em que ordem e quanto custa.</p>
+      </div>
+      <div class="tx">
+        <figure class="smile" id="smile">
+          <img src="https://images.unsplash.com/photo-1769559893692-c6d0623bf8e4?w=1200&q=80&auto=format&fit=crop" alt="Close de um sorriso com dentes brancos e batom vermelho" loading="lazy" decoding="async" onerror="this.remove()">
+          <div class="smile-over">
+            <span class="eyebrow">Tratamentos da clínica</span>
+            <div class="rot" aria-live="polite"><span id="rotText">Implantes dentários</span></div>
+            <div class="rot-foot"><span><b id="rotIdx">01</b> / 08</span><span class="rot-bar"><i id="rotBar"></i></span></div>
+          </div>
+        </figure>
+      <div class="treat" id="treatList">
+        <article><span class="code">Reabilitação</span><h3>Implantes dentários</h3><p>Reposição de dentes perdidos com planejamento a partir de exame de imagem.</p></article>
+        <article><span class="code">Reabilitação</span><h3>Próteses e reabilitação oral</h3><p>Próteses fixas e removíveis para devolver a mastigação e o sorriso.</p></article>
+        <article><span class="code">Estética</span><h3>Facetas e estética dental</h3><p>Ajuste de cor, forma e tamanho dos dentes, planejado junto com você.</p></article>
+        <article><span class="code">Estética</span><h3>Clareamento</h3><p>Clareamento em consultório ou caseiro, acompanhado pelo dentista.</p></article>
+        <article><span class="code">Alinhamento</span><h3>Aparelho ortodôntico</h3><p>Correção do alinhamento dos dentes com acompanhamento na clínica.</p></article>
+        <article><span class="code">Cirurgia</span><h3>Cirurgias odontológicas</h3><p>Extrações, incluindo sisos, e cirurgias de preparo para implantes.</p></article>
+        <article><span class="code">Prevenção</span><h3>Clínica geral</h3><p>Consultas de rotina, limpeza, restaurações e tratamento de canal.</p></article>
+        <article><span class="code">Saúde integrada</span><h3>Depilação a laser</h3><p>Sessões para homens e mulheres, no mesmo endereço do seu dentista.</p></article>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block visit" id="primeira-consulta">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Primeira consulta</div>
+          <h2 style="margin-top:14px">Como funciona a sua <em>primeira visita.</em></h2>
+        </div>
+        <p>Sem surpresa no meio do caminho. O plano é apresentado e aprovado por você antes de qualquer procedimento.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Agendamento</h3><p>Chame no WhatsApp ou ligue e escolha um horário, inclusive à noite ou no sábado.</p></li>
+        <li><h3>Avaliação</h3><p>O dentista examina sua boca, ouve suas queixas e, se preciso, pede exames de imagem.</p></li>
+        <li><h3>Plano de tratamento</h3><p>Você recebe as etapas, o prazo e o valor, com as formas de pagamento disponíveis.</p></li>
+        <li><h3>Tratamento</h3><p>As sessões são marcadas em horários que cabem na sua rotina, com retorno após o fim.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap why">
+      <blockquote>Odontologia estética com <em>equipe completa</em> e horário de quem trabalha.</blockquote>
+      <ul>
+        <li><b>Horário estendido</b><p>Atendimento até as 20h de segunda a sexta e das 9h às 17h aos sábados. Dá para vir depois do expediente.</p></li>
+        <li><b>Equipe</b><p>Dentistas de diferentes especialidades trabalhando juntos, sem precisar encaminhar você para outra cidade.</p></li>
+        <li><b>Transparência</b><p>O que precisa ser feito, o que pode esperar e quanto custa, explicado em linguagem clara antes de começar.</p></li>
+        <li><b>Localização</b><p>No centro de Guaratuba, ao lado da rodoviária. Fácil para quem mora na cidade e para quem está de temporada.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="avaliacoes">
+    <div class="wrap">
+      <div class="reviews">
+        <div class="score">4,7<small> /5</small></div>
+        <div>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p><strong>249 pacientes</strong> avaliaram a Clínica Joinville no Google. Leia o que eles falam sobre o atendimento da equipe e da recepção.</p>
+        </div>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Clinica+Joinville+Guaratuba&query_place_id=ChIJ58XrEzHx25QRiP2lbjmlc78" target="_blank" rel="noopener">Ler avaliações no Google</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="visite">
+    <div class="wrap visitus">
+      <div>
+        <div class="eyebrow">Horário de atendimento</div>
+        <h2 style="margin-top:14px">Aberta até as <em>20h.</em></h2>
+        <div class="status" id="status"><span class="dot" id="dot"></span><span id="statusText">Horário de Brasília</span></div>
+        <table class="hours" aria-label="Horário de atendimento">
+          <tbody id="hoursBody"></tbody>
+        </table>
+      </div>
+      <div class="contact">
+        <div class="eyebrow">Onde estamos</div>
+        <div class="row">
+          <span class="eyebrow">Endereço</span>
+          <span class="val">R. Dr. Joaquim Menelau de Almeida Torres, 93</span>
+          <span style="color:var(--muted)">Centro, Guaratuba, PR · 83280-000</span>
+          <div class="actions">
+            <a class="btn btn-ghost btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=Clinica+Joinville+Guaratuba&destination_place_id=ChIJ58XrEzHx25QRiP2lbjmlc78" target="_blank" rel="noopener">Como chegar</a>
+          </div>
+        </div>
+        <div class="row">
+          <span class="eyebrow">Telefone e WhatsApp</span>
+          <span class="val" id="phone">(41) 3442-2006</span>
+          <div class="actions">
+            <a class="btn btn-solid btn-sm" href="https://wa.me/554134422006?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+            <a class="btn btn-ghost btn-sm" href="tel:+554134422006">Ligar</a>
+            <button class="copy" id="copyPhone" type="button">Copiar número</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Marque sua avaliação <em>ainda esta semana.</em></h2>
+      <a class="btn btn-solid" href="https://wa.me/554134422006?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Clínica Joinville · R. Dr. Joaquim Menelau de Almeida Torres, 93, Centro, Guaratuba, PR</span>
+    <span class="mono">Responsável técnico: <span class="ph">Dr(a). Nome</span> · CRO-PR <span class="ph">00000</span></span>
+    <span class="mono">Site por Altivy Growth.MKT</span>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Clinica+Joinville+Guaratuba&destination_place_id=ChIJ58XrEzHx25QRiP2lbjmlc78" target="_blank" rel="noopener">Como chegar</a>
+  <a class="btn btn-solid" href="https://wa.me/554134422006?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+(function () {
+  // Hours table with "today" and live open/closed status in Brasília time
+  const days = [
+    ['Domingo', null], ['Segunda-feira', [9, 20]], ['Terça-feira', [9, 20]], ['Quarta-feira', [9, 20]],
+    ['Quinta-feira', [9, 20]], ['Sexta-feira', [9, 20]], ['Sábado', [9, 17]]
+  ];
+  let now;
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Sao_Paulo', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+    const get = t => parts.find(p => p.type === t).value;
+    const wd = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+    now = { day: wd, h: (parseInt(get('hour'), 10) % 24) + parseInt(get('minute'), 10) / 60 };
+  } catch (e) { const d = new Date(); now = { day: d.getDay(), h: d.getHours() + d.getMinutes() / 60 }; }
+
+  const body = document.getElementById('hoursBody');
+  [1, 2, 3, 4, 5, 6, 0].forEach(i => {
+    const [name, hrs] = days[i];
+    const tr = document.createElement('tr');
+    if (i === now.day) tr.className = 'today';
+    if (!hrs) tr.classList.add('closed');
+    tr.innerHTML = `<td>${name}</td><td>${hrs ? `${hrs[0]}h às ${hrs[1]}h` : 'Fechado'}</td>`;
+    body.appendChild(tr);
+  });
+  const today = days[now.day][1];
+  const isOpen = today && now.h >= today[0] && now.h < today[1];
+  document.getElementById('dot').classList.toggle('open', !!isOpen);
+  let msg;
+  if (isOpen) msg = `Aberta agora · fecha às ${today[1]}h`;
+  else {
+    let n = (today && now.h < today[0]) ? now.day : (now.day + 1) % 7;
+    while (!days[n][1]) n = (n + 1) % 7;
+    const when = n === now.day ? 'hoje' : (n === (now.day + 1) % 7 ? 'amanhã' : days[n][0].toLowerCase());
+    msg = `Fechada agora · abre ${when} às ${days[n][1][0]}h`;
+  }
+  document.getElementById('statusText').textContent = msg;
+
+  // Copy phone
+  const btn = document.getElementById('copyPhone');
+  btn.addEventListener('click', () => {
+    const text = '(41) 3442-2006';
+    const done = () => { btn.textContent = 'Copiado'; setTimeout(() => (btn.textContent = 'Copiar número'), 1800); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('phone')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selecionado, use Ctrl+C'; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+  });
+
+  // Treatments rotator over the smile photo
+  (function () {
+    const items = Array.from(document.querySelectorAll('#treatList article'));
+    const names = items.map(a => a.querySelector('h3').textContent);
+    const box = document.querySelector('.rot');
+    const idx = document.getElementById('rotIdx');
+    const bar = document.getElementById('rotBar');
+    const fig = document.getElementById('smile');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const DUR = 2800;
+    let i = 0, timer = null, paused = false;
+    bar.style.setProperty('--dur', DUR + 'ms');
+    function show(n) {
+      i = (n + names.length) % names.length;
+      const cur = box.querySelector('span:not(.out)');
+      const next = document.createElement('span');
+      next.className = 'in'; next.textContent = names[i];
+      box.appendChild(next);
+      requestAnimationFrame(() => requestAnimationFrame(() => { next.className = ''; if (cur) cur.className = 'out'; }));
+      if (cur) setTimeout(() => cur.remove(), 650);
+      idx.textContent = String(i + 1).padStart(2, '0');
+      items.forEach((a, k) => a.classList.toggle('on', k === i));
+      bar.classList.remove('run'); void bar.offsetWidth;
+      if (!reduce && !paused) bar.classList.add('run');
+    }
+    function start() { stop(); if (reduce) return; timer = setInterval(() => { if (!paused) show(i + 1); }, DUR); }
+    function stop() { if (timer) clearInterval(timer); timer = null; }
+    items.forEach((a, k) => {
+      a.tabIndex = 0;
+      a.addEventListener('mouseenter', () => { paused = true; show(k); });
+      a.addEventListener('focus', () => { paused = true; show(k); });
+      a.addEventListener('click', () => { paused = true; show(k); });
+    });
+    document.getElementById('treatList').addEventListener('mouseleave', () => { paused = false; show(i); start(); });
+    fig.addEventListener('mouseenter', () => { paused = true; bar.classList.remove('run'); });
+    fig.addEventListener('mouseleave', () => { paused = false; show(i); start(); });
+    items[0].classList.add('on');
+    if (!reduce) bar.classList.add('run');
+    start();
+  })();
+
+  // Hero slideshow
+  (function () {
+    const hero = document.querySelector('.hero');
+    const imgs = Array.from(hero.querySelectorAll('.slides img'));
+    const dots = Array.from(hero.querySelectorAll('.hd'));
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let i = 0, t = null;
+    function go(n) {
+      i = (n + dots.length) % dots.length;
+      imgs.forEach((im, k) => { im.classList.remove('on'); if (k === i) { void im.offsetWidth; im.classList.add('on'); } });
+      dots.forEach((d, k) => { d.classList.remove('on'); d.setAttribute('aria-selected', k === i); });
+      void dots[i].offsetWidth; dots[i].classList.add('on');
+    }
+    function start() { clearInterval(t); if (!reduce) t = setInterval(() => go(i + 1), 10000); }
+    dots.forEach((d, k) => d.addEventListener('click', () => { go(k); start(); }));
+    document.addEventListener('visibilitychange', () => { if (document.hidden) clearInterval(t); else start(); });
+    start();
+  })();
+})();
+</script>
+
+</body>
+</html>
